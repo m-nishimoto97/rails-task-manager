@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="text-center">
+    <h1>Edit a Task!</h1>
+
+    <%= form_with model: @task do |f| %>
+    <div class="d-flex flex-column w-50 mx-auto">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :details %>
+      <%= f.text_area :details %>
+      <div class='d-flex justify-content-center align-items-center mt-2'>
+        <%= f.label :completed, class: 'me-2'%>
+        <%= f.check_box :completed %>
+      </div>
+      <%= f.submit class: "my-3 btn btn-primary" %>
+    </div>
+    <% end %>
+    <%= link_to tasks_path, class: "btn btn-secondary" do %>
+      <i class="fa-solid fa-house-user"></i>
+    <% end %>
+  </div>
+</div>

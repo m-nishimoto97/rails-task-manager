@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="d-flex flex-column align-items-center mx-auto">
+    <h1><%= @task.title %></h1>
+    <p><%= @task.details %></p>
+    <% if @task.completed %>
+      <p>Your task is done~ 完了済み！</p>
+    <% else %>
+      <p>Your task isn't dumb yet you lazy mf</p>
+    <% end %>
+
+    <%= link_to "Back to list", tasks_path, class: 'btn btn-secondary' %>
+    <%= link_to "Edit a Task", edit_task_path(@task), class: 'btn btn-secondary' %>
+    <%= link_to "Delete me!", task_path(@task), class: "btn btn-secondary", data: {turbo_method: :delete, turbo_confirm: "Babes are you really sure?"} %>
+  </div>
+</div>
